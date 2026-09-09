@@ -1,0 +1,7 @@
+{
+  "id": "charts",
+  "title": "Charts",
+  "qml": "ChartsTab.qml",
+  "order": 40,
+  "apiVersion": 1
+}

@@ -1,0 +1,468 @@
+ПОЛЬЗОВАТЕЛЬСКИЕ МЕТРИКИ И ВКЛАДКИ JIRA ANALYTICS
+
+НАЗНАЧЕНИЕ
+
+Свою метрику можно добавить двумя способами.
+
+A) Создать внешнюю вкладку на QML и использовать данные, уже доступные через
+   ModuleApi.
+
+B) Добавить метрику в ядро программы: новый расчёт, поле модели или данные
+   из Jira.
+
+Если нужные данные уже есть в ModuleApi, не меняйте код на Python. Если не
+хватает поля, исторического состояния, правила классификации или запроса к
+Jira, метрику нужно добавить в ядро.
+
+ПУТЬ 1. ВНЕШНЯЯ ВКЛАДКА НА QML
+
+Этот путь подходит, если:
+
+  данные уже доступны через ModuleApi;
+  нужна новая группировка, карточка, таблица или график;
+  расчёт не меняет правила классификации задач.
+
+Ограничения
+
+  Программа загружает только QML. Подключаемый код на Python не поддерживается.
+  Модуль считается доверенным и не запускается в изолированной среде.
+  Поддерживаемый интерфейс состоит только из свойств api и theme.
+  Объект backend технически виден в общем контексте QML, но относится к
+  внутреннему устройству оболочки. Обращаться к нему из модуля нельзя.
+  После добавления или изменения модуля программу нужно перезапустить.
+
+Каталог модуля
+
+  ~/.local/share/jira-analytics/modules/my_metric/
+    module.json
+    Main.qml
+
+Минимальный файл module.json
+
+  {
+    "id": "my_metric",
+    "title": "Моя метрика",
+    "qml": "Main.qml",
+    "order": 100,
+    "apiVersion": 1
+  }
+
+Поля module.json
+
+  id: уникальный идентификатор по правилу ^[a-z][a-z0-9_]*$.
+  title: непустое название вкладки.
+  qml: путь к главному QML-файлу.
+  order: целое число; вкладки с меньшим значением идут раньше.
+  apiVersion: строго 1.
+
+Используйте относительный путь. Путь не должен выходить за каталог модуля ни
+с помощью .., ни через символическую ссылку.
+
+Что нужно настроить для примера
+
+  В ~/.config/jira-analytics.yaml должно быть analytics_enabled: true.
+  Должна быть настроена хотя бы одна доска с правильным идентификатором Jira.
+  Иначе api.refreshPeriod() не заполнит periodSprintModel.
+
+Минимальный файл Main.qml
+
+  import QtQuick 2.12
+  import QtQuick.Controls 2.12
+  import QtQuick.Layouts 1.12
+
+  ColumnLayout {
+      property var api
+      property var theme
+
+      Label {
+          text: "Моя метрика"
+          color: theme.text
+      }
+
+      ListView {
+          id: sprintList
+          Layout.fillWidth: true
+          Layout.fillHeight: true
+          model: api.periodSprintModel
+          delegate: Label {
+              text: team + ": " + sprint + " — " + completion
+              color: theme.text
+          }
+      }
+
+      Label {
+          visible: api.periodChecking
+          text: "Загрузка..."
+          color: theme.muted
+      }
+
+      Label {
+          visible: !api.periodChecking && sprintList.count === 0
+          text: "Нет данных"
+          color: theme.muted
+      }
+
+      Label {
+          visible: api.periodErrorsText.length > 0
+          text: api.periodErrorsText
+          color: theme.red
+          wrapMode: Text.WordWrap
+          Layout.fillWidth: true
+      }
+
+      Button {
+          text: "Обновить"
+          enabled: !api.periodChecking
+          onClicked: api.refreshPeriod()
+      }
+  }
+
+МОДЕЛИ MODULEAPI
+
+Имена моделей и ролей нельзя переводить: они являются частью программного
+интерфейса.
+
+taskModel
+
+  Содержит задачи, для которых отслеживается целевая дата из поля, заданного
+  параметром target_end_field. По умолчанию это поле Jira Target end.
+  Модель предназначена для ListView.model. Методы get(row) и count для неё
+  не гарантируются.
+  Роли: key строка, summary строка, status строка, target_end строка с датой
+  ISO, days целое число, kind строка, url строка, assignee строка.
+
+periodBoardModel
+
+  Содержит все загруженные доски и команды текущего периода.
+  Поддерживает ListView.model, count и get(row).
+  Строки для показа: totalPoints, donePoints, avgVelocity, removedPoints.
+  Строки со знаком процента: completion, flowEfficiency.
+  Целые числа: sprints, notDone, spillover, spilloverCompleted, backlog,
+  reassigned, unestimated, removed, completedLater, observedOtherBoard,
+  notObserved, unknown. reassigned — legacy-сумма последних трёх маршрутных ролей.
+  Название команды: team, строка.
+
+periodSprintModel
+
+  Пока selectedTeam пуст, содержит все спринты. После вызова selectTeam(team)
+  содержит только выбранную команду. Поэтому эта модель не подходит как
+  постоянный источник общих данных по всем командам.
+  Поддерживает ListView.model, count и get(row).
+  Строки: team, sprint, startDate, endDate, period, periodSprintLabel, dates,
+  points, totalPoints, removedPoints, leadTimeP50, leadTimeP85, leadTimeP95,
+  agingAvg, agingMax, statusDistribution.
+  completion и flowEfficiency: строки со знаком процента.
+  sprintId, boardId, total, done, notDone, spillover, spilloverCompleted,
+  active, backlog, reassigned, removed, completedLater, observedOtherBoard, notObserved,
+  unknown: целые числа.
+  statusDistribution содержит строку JSON, а не готовый объект QML.
+
+backlogHealthModel
+
+  Содержит только доски с настроенным backlog_jql, для которых waiting-задачи
+  успешно загружены. Отсутствие строки команды не означает, что её бэклог пуст.
+  Поддерживает ListView.model, count и get(row).
+  team — строка; agingAvg — строка для показа; totalOpen, aging30, aging90,
+  aging180, aging365, agingMax, staleCount — целые числа; items — список.
+  Каждый элемент items содержит key строку, summary строку, age целое число,
+  sinceUpdate целое число, status строку и assignee строку.
+
+assigneeModel
+
+  Содержит исполнителей загруженного периода. После вызова
+  setAssigneeBoardFilter(name) остаются исполнители выбранной доски или команды.
+  Группа External / Other скрыта, если параметр show_external_assignees имеет
+  значение false.
+  Модель предназначена для ListView.model. Методы get(row) и count для неё
+  не гарантируются.
+  name, team, doneSp, totalSp и completion — строки; completion содержит %.
+  tasks, done, spillover, spilloverCompleted, active, backlog, reassigned,
+  completedLater, observedOtherBoard, notObserved и unknown — целые
+  числа. items — список объектов расшифровки. Каждый объект содержит key,
+  summary, sprint, points, category, routeCategory, completedLater, currentStatus,
+  currentStatusCategory и originalName.
+  category сохраняет legacy `reassigned`; точный маршрут находится в routeCategory.
+  points — строка для показа.
+
+chartSlotsModel
+
+  Содержит все спринты, объединённые для построения графиков. Модель не зависит
+  от selectedTeam.
+  Поддерживает ListView.model, count и get(row).
+  team, period, startDate, endDate, chartSlotLabel и statusDistribution — строки.
+  done, total, spillover, spilloverCompleted, active, backlog, reassigned, notDone,
+  removed, completedLater, observedOtherBoard, notObserved и unknown — целые числа.
+  agingMax — число.
+  totalPoints, donePoints, points, removedPoints, completion, flowEfficiency,
+  leadTimeP50, leadTimeP85, leadTimeP95 и agingAvg — числа.
+
+Для арифметики и общих графиков по всем командам выбирайте chartSlotsModel.
+Её числовые роли не преобразованы в строки для показа.
+
+СОСТОЯНИЕ MODULEAPI
+
+  checking — логическое значение; errorsText и itemsText — строки.
+  periodChecking — логическое значение.
+  periodStatusText и periodErrorsText — строки.
+  periodFromCache — логическое значение; periodLastRefresh — строка.
+  periodKpi — словарь.
+  selectedTeam, backlogSort, backlogAgeFilter и backlogActiveStatuses — строки.
+  forgottenAgeDays — целое число.
+  assigneeBoardNames — список; assigneeKpi — словарь.
+
+Все свойства состояния сообщают QML об изменении. Имя сигнала образуется
+добавлением Changed: например, periodCheckingChanged и selectedTeamChanged.
+
+periodKpi зависит от selectedTeam. При пустом фильтре он содержит общий итог,
+при выбранной команде — итог одной доски или команды. Ключи boards, sprints,
+  notDone, spillover, spilloverCompleted, active, backlog, reassigned, unestimated,
+  removed, completedLater, observedOtherBoard, notObserved и unknown имеют тип
+  целого числа. donePoints, avgVelocity и removedPoints —
+строки для показа. completion и flowEfficiency — строки со знаком процента.
+
+assigneeKpi учитывает текущий фильтр по доске. Ключи people и totalSpillover —
+целые числа. doneSp — строка для показа. avgCompletion — строка со знаком
+процента.
+
+КОМАНДЫ MODULEAPI
+
+  refreshTarget()
+  saveItems(text)
+  refreshPeriod()
+  selectTeam(team)
+  setBacklogSort(sort_key)
+  setAssigneeBoardFilter(name)
+  openIssue(key) -> bool
+  openSprintReport(board_id, sprint_id) -> bool
+
+ЦВЕТА THEME
+
+  bg, card, border, text, muted, blue, red, redSoft, amber, amberSoft.
+
+Полное техническое описание также находится в разделе «API ModuleApi» файла
+modular_architecture.md.
+
+ПРАВИЛА РАСЧЁТОВ В QML
+
+В QML можно форматировать, сортировать и отбирать готовые значения, а также
+агрегировать числовые роли.
+
+Не складывайте строки из periodBoardModel, periodSprintModel или assigneeModel:
+значения с %, SP и округлением предназначены для показа. Для арифметики
+используйте числовые роли chartSlotsModel.
+
+Не повторяйте в QML правила done, spillover, backlog, reassigned, исторического
+среза, устранения повторов и выбора Story Points. Итоговое число и строки его
+расшифровки должны использовать одно правило. Такие расчёты относятся к ядру
+на Python.
+
+ОШИБКИ И ПОВТОРЯЮЩИЕСЯ ID
+
+  Модуль с неверным module.json пропускается; причина выводится в stderr.
+  Ошибка синтаксиса, импорта или создания пользовательского QML показывает
+  сообщение только в его вкладке. Ошибка JavaScript во время выполнения может
+  быть выведена только в stderr.
+  Пользовательский id не может заменить встроенный модуль.
+  Среди пользовательских модулей с одинаковым id остаётся первый каталог в
+  алфавитном порядке. Отдельное предупреждение о повторе не показывается.
+
+КАК ПРОВЕРИТЬ ВНЕШНИЙ МОДУЛЬ
+
+  Запуск из корня проекта: python3 jira_analytics_gui.py
+  Запуск установленной программы: jira-analytics-gui
+
+  A) Перезапустите программу и убедитесь, что вкладка появилась.
+
+  B) Для проверки пустого состояния временно задайте свойству model пустой
+     список [], перезапустите программу, а затем верните
+     api.periodSprintModel.
+
+  C) Нажмите «Обновить» и проверьте состояние загрузки по
+     api.periodChecking.
+
+  D) Убедитесь, что api.periodErrorsText выводится при ошибке Jira. Само
+     отображение можно безопасно проверить, временно подставив строку
+     «Проверка ошибки» вместо api.periodErrorsText, а затем вернув привязку.
+     Не создавайте настоящую ошибку Jira в рабочих настройках.
+
+  E) Переключитесь на другую вкладку и обратно. Локальное состояние должно
+     сохраниться.
+
+  F) Для проверки Loader.Error создайте отдельный временный пользовательский
+     модуль с намеренно неверным QML. После перезапуска сообщение об ошибке
+     должно появиться только в его вкладке. После проверки удалите каталог.
+
+  G) Проверьте нажатия, прокрутку и работу в узком окне.
+
+ПУТЬ 2. МЕТРИКА ЯДРА
+
+Этот путь нужен, если:
+
+  требуется новое поле Jira, история изменений или Sprint Report;
+  нужен исторический срез для закрытого спринта;
+  меняется классификация done, spillover, backlog или reassigned;
+  значение должно появиться в нескольких вкладках или расшифровках;
+  нужной роли нет в ModuleApi.
+
+ШАГ 1. ОПРЕДЕЛИТЬ СМЫСЛ МЕТРИКИ
+
+До написания кода определите:
+
+  для чего считается значение: задача, спринт, доска, команда или общий итог;
+  момент расчёта: текущее состояние или состояние на конец спринта;
+  числитель, знаменатель, единицы измерения и округление;
+  поведение при пустых данных и отсутствующем поле;
+  правило устранения повторов по ключу задачи;
+  источник Story Points, если оценка менялась между спринтами;
+  связь итогового числа со строками расшифровки.
+
+Если хотя бы одно правило не определено, метрику рано реализовывать.
+
+ШАГ 2. ДОБАВИТЬ ТЕСТ, КОТОРЫЙ СНАЧАЛА НЕ ПРОХОДИТ
+
+Тесты находятся в test_jira_analytics.py и используют обычные assert.
+Создайте минимальный пример, который отличает новое правило от старого.
+
+Для исторической метрики проверьте закрытый и активный спринты. Для общего
+итога проверьте одну задачу, встречающуюся в нескольких спринтах.
+
+Запуск:
+
+  python3 test_jira_analytics.py
+
+ШАГ 3. РЕАЛИЗОВАТЬ ЧИСТЫЙ РАСЧЁТ
+
+Классы данных и функции расчёта находятся в jira_period_analytics.py. Они не
+должны зависеть от PyQt или Jira API и не должны управлять интерфейсом.
+
+Предпочитайте расширение SprintSummary, BoardAggregate, PeriodReport или
+build_chart_slots(), а не параллельный расчёт в графическом слое.
+
+ШАГ 4. СОБРАТЬ НЕДОСТАЮЩИЕ ДАННЫЕ ИЗ JIRA
+
+Запросы к Jira, настройки, история изменений, Sprint Report и обработка
+частичных ошибок находятся в jira_analytics.py.
+
+Не добавляйте новый запрос, если поле уже есть в загруженной задаче. Ошибка
+одного источника должна попасть в errors и не должна прерывать весь отчёт,
+если расчёт можно продолжить.
+
+ШАГ 5. ПЕРЕДАТЬ ЗНАЧЕНИЕ В ГРАФИЧЕСКИЙ СЛОЙ
+
+jira_analytics_gui.py преобразует PeriodReport в словари моделей. Добавьте имя
+роли в список ролей соответствующей DictListModel, а её значение — в словарь,
+формируемый для этой модели.
+
+Если значение нужно внешним модулям, опубликуйте его через ModuleApi. Свойство,
+которое читает QML, должно иметь правильный сигнал об изменении.
+
+ШАГ 5A. СОГЛАСОВАТЬ РАБОТУ С КЕШЕМ
+
+save_period_cache() преобразует классы данных в JSON автоматически.
+load_period_cache() вручную восстанавливает PortfolioAggregate,
+BoardAggregate, SprintSummary, AssigneeSummary, BacklogHealth и PeriodReport.
+Новое поле верхнего уровня или вложенный класс данных нужно восстановить явно.
+
+Добавьте тест: результат нового расчёта и результат, загруженный из кеша,
+должны публиковать одинаковое значение.
+
+При любом изменении структуры или смысла отчёта добавьте или увеличьте явную
+версию схемы и расчёта внутри _config_signature(). Старый кеш без новой метрики
+должен быть отклонён, а не загружен со значением по умолчанию. Отдельным тестом
+загрузите кеш старого формата и убедитесь, что load_period_cache() вернул None.
+
+Если метрика зависит от нового параметра настройки, включите этот параметр в
+_config_signature(). Иначе разные настройки будут использовать один кеш.
+
+Не публикуйте через ModuleApi учётные данные, настройки, переменные окружения,
+объект Jira-клиента или произвольную функцию Python.
+
+ШАГ 6. ДОБАВИТЬ ПРЕДСТАВЛЕНИЕ
+
+Встроенные вкладки находятся в modules/MODULE_ID/, а не в qml/. QML получает
+готовые значения через api и цвета через theme.
+
+Итоговое число и строки расшифровки должны рассчитываться в Python по одному
+правилу. Для отдельного представления предпочтителен новый модуль; ради одного
+поля достаточно изменить существующую вкладку.
+
+ШАГ 7. ОБНОВИТЬ ПЕРЕВОДЫ
+
+Новые строки QML оформляйте через qsTr(). Создайте шаблон переводов QML:
+
+  python3 scripts/extract_qml.py qml/Main.qml modules/*/*.qml > translations/messages_qml.pot
+
+Перенесите новые записи в translations/ru/LC_MESSAGES/jira_qt.po и соберите
+двоичный каталог переводов:
+
+  msgfmt translations/ru/LC_MESSAGES/jira_qt.po -o translations/ru/LC_MESSAGES/jira_qt.mo
+
+Для ручной проверки используйте переводчик проекта и имя QML-файла в качестве
+контекста. Например:
+
+  LANG=ru_RU.UTF-8 python3 -c 'from translations import _c; print(_c("ChartsTab.qml", "Charts"))'
+
+Команда должна вывести «Графики». Обычный gettext для такой проверки не
+подходит, потому что он не учитывает контекст QML-файла.
+
+ШАГ 8. ОБНОВИТЬ ОПИСАНИЕ
+
+Формулу, ограничения и правила чтения графика добавьте в docs/charts.md.
+Изменение общедоступных ролей, свойств или команд отразите в разделе
+«API ModuleApi» файла modular_architecture.md и в этом руководстве.
+
+ШАГ 9. ВЫПОЛНИТЬ ПРОВЕРКИ
+
+  python3 test_jira_analytics.py
+  python3 -m py_compile jira_analytics.py jira_period_analytics.py jira_analytics_gui.py jira_modules.py scripts/extract_qml.py
+  msgfmt --check translations/ru/LC_MESSAGES/jira_qt.po -o /tmp/jira_qt_check.mo
+  git diff --check
+
+Для проверки запуска интерфейса без экрана выполните:
+
+  QT_QPA_PLATFORM=offscreen python3 jira_analytics_gui.py
+
+В окружении без QtQuick допустима только ошибка импорта
+module "QtQuick" is not installed. Ошибка синтаксиса QML недопустима.
+
+ОБЯЗАТЕЛЬНЫЕ ПРАВИЛА АНАЛИТИКИ
+
+  Не смешивайте данные разных досок и команд.
+  Для закрытого спринта используйте состояние на конец спринта.
+  Для активного спринта используйте текущее состояние.
+  Метрика спринта считает задачу в каждом спринте, где она присутствует.
+  Общий уникальный итог устраняет повторы задач по ключу.
+  Итог done требует явного спринта или правила выбора последнего состояния.
+  total points и done points должны использовать один источник оценки.
+  completion не должен превышать 100% из-за смешения источников Story Points.
+  Итоговое число и строки расшифровки вычисляются по одному правилу.
+  Частичная ошибка загрузки сохраняется в errors и не скрывается.
+
+КРИТЕРИИ ГОТОВНОСТИ МЕТРИКИ ЯДРА
+
+  A) Смысл метрики и момент расчёта записаны.
+  B) Есть минимальный тест, воспроизводящий новое правило.
+  C) Расчёт находится в jira_period_analytics.py.
+  D) Сбор данных Jira находится в jira_analytics.py.
+  E) Старый кеш отклоняется после изменения версии схемы или расчёта.
+  F) Новый расчёт и загрузка из кеша дают одинаковую метрику.
+  G) Новый параметр настройки включён в _config_signature().
+  H) Графический слой не повторяет классификацию.
+  I) Роль, свойство и сигнал об изменении согласованы с QML.
+  J) Проверены пустые данные, частичная ошибка и исторический срез.
+  K) Формула добавлена в docs/charts.md.
+  L) POT, PO и MO обновлены.
+  M) Тесты, компиляция, проверочный запуск QML и git diff прошли.
+
+КРИТЕРИИ ГОТОВНОСТИ ВНЕШНЕЙ ВКЛАДКИ
+
+  A) module.json соответствует apiVersion 1.
+  B) QML объявляет api и theme.
+  C) Нет обращений к backend и глобальным моделям.
+  D) В QML не повторяется классификация из ядра.
+  E) Для арифметики выбраны числовые роли, а не строки для показа.
+  F) Учтена фильтрация periodSprintModel и assigneeModel.
+  G) Пустое состояние и состояние загрузки понятны пользователю.
+  H) Оболочка показывает сообщение при Loader.Error.
+  I) Состояние сохраняется при переключении вкладок.
+  J) Модуль проверен после полного перезапуска.

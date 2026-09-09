@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+    mkdir -p /etc/jira-analytics
+    if [ ! -e /etc/jira-analytics/jira-analytics.yaml ]; then
+        cp /usr/share/doc/jira-analytics/examples/jira-analytics.yaml.example /etc/jira-analytics/jira-analytics.yaml
+    fi
+    chmod 644 /etc/jira-analytics/jira-analytics.yaml
+fi
+
+#DEBHELPER#
+
+exit 0

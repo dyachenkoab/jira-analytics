@@ -1,0 +1,7 @@
+{
+  "id": "period_analytics",
+  "title": "Period analytics",
+  "qml": "PeriodAnalyticsTab.qml",
+  "order": 10,
+  "apiVersion": 1
+}

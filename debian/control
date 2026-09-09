@@ -1,0 +1,14 @@
+Source: jira-analytics
+Section: utils
+Priority: optional
+Maintainer: user4 <user4@localhost>
+Build-Depends: debhelper-compat (= 13), gettext
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: jira-analytics
+Architecture: all
+Depends: ${misc:Depends}, python3, python3-yaml, python3-pyqt5, python3-pyqt5.qtquick, python3-cryptography, qml-module-qtquick-controls2, libglib2.0-bin
+Description: Jira analytics and Target end notifications for KDE sessions
+ Checks Jira issues and JQL filters for near Target end dates, sends desktop
+ notifications, and shows Jira analytics in a tray application.

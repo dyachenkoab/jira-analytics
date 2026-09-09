@@ -1,0 +1,56 @@
+warn_days: 7
+first_check_delay_minutes: 2
+check_interval_minutes: 60
+connect_timeout_seconds: 15
+notifications_enabled: true
+target_end_field: Target end
+items: []
+analytics_enabled: true
+period_start: null
+period_end: null
+boards: []
+# boards:
+#   - id: 101
+#     name: Team A
+#     # Историческое имя: это team-scope JQL всех задач команды, а не только backlog.
+#     backlog_jql: "project = AL AND Team = 'Team A'"
+#     # per-board политика статусов: если поле задано, полностью переписывает глобальное
+#     done_statuses:
+#       - "Код написан"
+#     active_statuses:
+#       - "In Progress"
+#     waiting_statuses:
+#       - "To Do"
+story_points_field: Story points
+include_active_sprints: true
+changelog_cache_ttl_hours: 24
+forgotten_age_days: 30
+show_external_assignees: false
+parallel_workers: 3
+done_statuses:
+  - done
+  - Завершен
+  - Закрыта
+  - Завершена
+  - "На ревизии"
+  - "Ожидает релиз"
+  - Отменена
+  - QA-RC
+  - "Ожидает закрытия подзадач"
+  - "Код написан"
+active_statuses:
+  - In Progress
+  - Code Review
+  - Testing
+  - в работе
+waiting_statuses:
+  - To Do
+  - Blocked
+  - Waiting
+  - Backlog
+  - Анализ
+  - Новая
+  - Открыт
+  - Пауза
+  - "Нужна информация"
+  - "На тестировании"

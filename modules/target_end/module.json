@@ -1,0 +1,7 @@
+{
+  "id": "target_end",
+  "title": "Target end",
+  "qml": "TargetEndTab.qml",
+  "order": 0,
+  "apiVersion": 1
+}

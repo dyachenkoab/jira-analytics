@@ -1,0 +1,1352 @@
+# Russian translations for jira-analytics
+# Copyright (C) 2026
+# This file is distributed under the same license as the jira-analytics package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jira-analytics 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 09:11+0000\n"
+"PO-Revision-Date: 2026-07-02 14:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: jira_analytics.py:196 jira_analytics.py:565
+msgid "PyYAML not installed: install python3-yaml package"
+msgstr "Не установлен PyYAML: установите пакет python3-yaml"
+
+#: jira_analytics.py:202
+msgid "YAML must be a dict or a list of strings"
+msgstr "YAML должен быть словарём или списком строк"
+
+#: jira_analytics.py:205
+msgid "Field 'items' must be a list"
+msgstr "Поле 'items' должно быть списком"
+
+#: jira_analytics.py:208 jira_analytics.py:254
+#, python-format
+msgid "Field '%s' must be a boolean"
+msgstr "Поле '%s' должно быть логическим значением"
+
+#: jira_analytics.py:218
+msgid "period_start must be YYYY-MM-DD"
+msgstr "period_start должен быть в формате YYYY-MM-DD"
+
+#: jira_analytics.py:220
+msgid "period_end must be YYYY-MM-DD"
+msgstr "period_end должен быть в формате YYYY-MM-DD"
+
+#: jira_analytics.py:222
+msgid "period_start and period_end must both be set or both be empty"
+msgstr "period_start и period_end должны быть либо оба заданы, либо оба пусты"
+
+#: jira_analytics.py:224
+msgid "period_end must be greater than or equal to period_start"
+msgstr "period_end должен быть не раньше period_start"
+
+#: jira_analytics.py:276
+#, fuzzy
+msgid "Field 'boards' must be a list"
+msgstr "Поле 'items' должно быть списком"
+
+#: jira_analytics.py:280
+msgid "Each board must be a dict with id and name"
+msgstr ""
+
+#: jira_analytics.py:285
+msgid "Each board must have id and name"
+msgstr ""
+
+#: jira_analytics.py:288
+msgid "Each board's backlog_jql must be a string if present"
+msgstr ""
+
+#: jira_analytics.py:306
+#, fuzzy, python-format
+msgid "Field '%s' must be a list"
+msgstr "Поле 'items' должно быть списком"
+
+#: jira_analytics.py:312 jira_analytics_gui.py:781 jira_analytics_gui.py:860
+#, python-format
+msgid "Config file not found: %s"
+msgstr "Файл конфига не найден: %s"
+
+#: jira_analytics.py:646
+msgid ""
+"atlassian-python-api not installed: run python3 -m pip install --user "
+"atlassian-python-api"
+msgstr ""
+"Не установлен atlassian-python-api: выполните python3 -m pip install --user "
+"atlassian-python-api"
+
+#: jira_analytics.py:654
+msgid "JIRA_URL, JIRA_USERNAME and JIRA_TOKEN or JIRA_PASSWORD are required"
+msgstr ""
+"Нужны переменные JIRA_URL, JIRA_USERNAME и JIRA_TOKEN или JIRA_PASSWORD"
+
+#: jira_analytics.py:669
+#, python-format
+msgid "Jira field not found: %s"
+msgstr "Поле Jira не найдено: %s"
+
+#: jira_analytics.py:708
+msgid "Failed to send notification: gdbus command not found"
+msgstr "Не удалось отправить уведомление: команда gdbus не найдена"
+
+#: jira_analytics.py:712
+#, python-format
+msgid "Failed to send notification: %s"
+msgstr "Не удалось отправить уведомление: %s"
+
+#: jira_analytics.py:718
+msgid "Jira: Target end overdue"
+msgstr "Jira: Target end просрочен"
+
+#: jira_analytics.py:719
+#, python-format
+msgid "Overdue by %s days"
+msgstr "Просрочено на %s дн."
+
+#: jira_analytics.py:721
+msgid "Jira: Target end approaching"
+msgstr "Jira: скоро Target end"
+
+#: jira_analytics.py:722
+#, python-format
+msgid "%s days left"
+msgstr "Осталось %s дн."
+
+#: jira_analytics.py:723
+#, python-format
+msgid ""
+"Status: %s\n"
+"Target end: %s\n"
+"%s\n"
+"%s"
+msgstr ""
+"Статус: %s\n"
+"Target end: %s\n"
+"%s\n"
+"%s"
+
+#: jira_analytics.py:741
+msgid "Unassigned"
+msgstr "Не назначена"
+
+#: jira_analytics.py:888
+#, fuzzy
+msgid "period_start and period_end are required when analytics_enabled is true"
+msgstr "При включённой аналитике нужны обе даты периода"
+
+#: jira_analytics.py:915
+#, python-format
+msgid "Loading %s boards"
+msgstr ""
+
+#: jira_analytics.py:918
+#, python-format
+msgid "Board %s: sprints"
+msgstr ""
+
+#: jira_analytics.py:924
+#, fuzzy, python-format
+msgid "Error loading board %s: %s"
+msgstr "Ошибка при проверке %s: %s"
+
+#: jira_analytics.py:948
+#, python-format
+msgid "Sprint %s skipped: missing dates"
+msgstr ""
+
+#: jira_analytics.py:965
+#, python-format
+msgid "Loaded %s sprints"
+msgstr ""
+
+#: jira_analytics.py:973
+#, python-format
+msgid "Loading sprint issues: %s/%s"
+msgstr ""
+
+#: jira_analytics.py:994 jira_analytics.py:1006
+#, python-format
+msgid "Sprint report unavailable, removed data skipped: %s"
+msgstr ""
+
+#: jira_analytics.py:999
+#, fuzzy, python-format
+msgid "Error loading sprint %s: %s"
+msgstr "Ошибка при проверке %s: %s"
+
+#: jira_analytics.py:1036
+#, python-format
+msgid "Sprint issues loaded: %s sprints"
+msgstr ""
+
+#: jira_analytics.py:1049
+#, fuzzy, python-format
+msgid "Error loading backlog for %s: %s"
+msgstr "Ошибка при проверке %s: %s"
+
+#: jira_analytics.py:1054
+#, fuzzy, python-format
+msgid "Loading backlog: %s/%s"
+msgstr "Нет задач в беклоге"
+
+#: jira_analytics.py:1059
+#, python-format
+msgid "Backlog loaded: %s boards"
+msgstr ""
+
+#: jira_analytics.py:1086
+#, python-format
+msgid "Changelogs: %s/%s"
+msgstr ""
+
+#: jira_analytics.py:1092
+#, python-format
+msgid "Changelog not available for %s, using current status"
+msgstr ""
+
+#: jira_analytics.py:1095
+#, python-format
+msgid "Changelogs loaded: %s keys"
+msgstr ""
+
+#: jira_analytics.py:1119
+msgid "Calculating metrics"
+msgstr ""
+
+#: jira_analytics.py:1138
+#, python-format
+msgid "Failed to save analytics source cache: %s"
+msgstr "Не удалось сохранить кеш исходных данных аналитики: %s"
+
+#: jira_analytics.py:1168
+#, python-format
+msgid "Error checking %s: %s"
+msgstr "Ошибка при проверке %s: %s"
+
+#: jira_analytics.py:1179
+#, python-format
+msgid "Notification sent: %s"
+msgstr "Уведомление отправлено: %s"
+
+#: jira_analytics.py:1181
+#, python-format
+msgid "Notifications sent: %s"
+msgstr "Отправлено уведомлений: %s"
+
+#: jira_analytics_gui.py:30
+msgctxt "Main.qml"
+msgid "Target end"
+msgstr "Target end"
+
+#: jira_analytics_gui.py:31
+msgctxt "Main.qml"
+msgid "Period analytics"
+msgstr "Периодная аналитика"
+
+#: jira_analytics_gui.py:32
+msgctxt "Main.qml"
+msgid "Backlog health"
+msgstr "Backlog health"
+
+#: jira_analytics_gui.py:33
+msgctxt "Main.qml"
+msgid "Assignees"
+msgstr "Исполнители"
+
+#: jira_analytics_gui.py:34
+msgctxt "Main.qml"
+msgid "Charts"
+msgstr "Графики"
+
+#: jira_analytics_gui.py:629
+msgid "Data saved"
+msgstr "Данные сохранены"
+
+#: jira_analytics_gui.py:650
+msgid "Jira URL, username and token or password are required"
+msgstr "Укажите Jira URL, имя пользователя и токен или пароль"
+
+#: jira_analytics_gui.py:658
+msgid "Both period dates are required when analytics is enabled"
+msgstr "При включённой аналитике нужны обе даты периода"
+
+#: jira_analytics_gui.py:661
+msgid "Both period dates must be set or both be empty"
+msgstr "Укажите обе даты периода или оставьте обе пустыми"
+
+#: jira_analytics_gui.py:664
+msgid "Period dates must use DD-MM-YYYY"
+msgstr "Даты периода должны быть в формате ДД-ММ-ГГГГ"
+
+#: jira_analytics_gui.py:667
+msgid "Period end must be greater than or equal to period start"
+msgstr "Конец периода должен быть не раньше начала"
+
+#: jira_analytics_gui.py:694
+#, python-format
+msgid "Failed to save setup: %s"
+msgstr "Не удалось сохранить настройку: %s"
+
+#: jira_analytics_gui.py:706
+msgid "Setup saved"
+msgstr "Настройка сохранена"
+
+#: jira_analytics_gui.py:744
+msgid "Settings saved"
+msgstr "Настройки сохранены"
+
+#: jira_analytics_gui.py:774
+#, fuzzy
+msgid "Analytics settings saved"
+msgstr "Настройки сохранены"
+
+#: jira_analytics_gui.py:784 jira_analytics_gui.py:866
+msgid "Initial setup required"
+msgstr "Требуется первоначальная настройка"
+
+#: jira_analytics_gui.py:786
+msgid "Connecting"
+msgstr "Соединяется"
+
+#: jira_analytics_gui.py:811
+#, python-format
+msgid "Found issues: %s"
+msgstr "Найдены задачи: %s"
+
+#: jira_analytics_gui.py:813
+msgid "No issues found"
+msgstr "Задачи не найдены"
+
+#: jira_analytics_gui.py:815 jira_analytics_gui.py:1016
+#, python-format
+msgid "%s, errors: %s"
+msgstr "%s, ошибок: %s"
+
+#: jira_analytics_gui.py:826 jira_analytics_gui.py:839
+#: jira_analytics_gui.py:1045
+#, python-format
+msgid "Authentication failed: %s"
+msgstr "Ошибка авторизации: %s"
+
+#: jira_analytics_gui.py:834 jira_analytics_gui.py:841
+#: jira_analytics_gui.py:1048
+#, python-format
+msgid "Jira API access forbidden: %s"
+msgstr "Доступ к Jira API запрещён: %s"
+
+#: jira_analytics_gui.py:843
+#, python-format
+msgid "Connection error: %s"
+msgstr "Ошибка соединения: %s"
+
+#: jira_analytics_gui.py:863
+#, fuzzy
+msgid "Period analytics disabled in config"
+msgstr "Не удалось загрузить аналитику за период: %s"
+
+#: jira_analytics_gui.py:875
+#, fuzzy
+msgid "Loading period analytics"
+msgstr "Включить аналитику за период"
+
+#: jira_analytics_gui.py:919
+msgid "Updating from Jira..."
+msgstr ""
+
+#: jira_analytics_gui.py:921
+#, fuzzy
+msgid "Loaded from cache — click Refresh to update"
+msgstr "Cached — click Refresh"
+
+#: jira_analytics_gui.py:1014
+#, fuzzy, python-format
+msgid "Period analytics loaded: %s sprints"
+msgstr "Не удалось загрузить аналитику за период: %s"
+
+#: jira_analytics_gui.py:1040
+#, fuzzy, python-format
+msgid "Period analytics error: %s"
+msgstr "Не удалось загрузить аналитику за период: %s"
+
+#: jira_analytics_gui.py:1050
+#, python-format
+msgid "Period analytics failed: %s"
+msgstr "Не удалось загрузить аналитику за период: %s"
+
+#: jira_analytics_gui.py:1105
+#, python-format
+msgid "Failed to save period cache: %s"
+msgstr "Не удалось сохранить кеш аналитики за период: %s"
+
+#: jira_analytics_gui.py:1193
+msgid "List saved"
+msgstr "Список сохранен"
+
+#: jira_analytics_gui.py:1448
+#, python-format
+msgid "Some modules were skipped: %s"
+msgstr "Пропущено модулей: %s"
+
+#: jira_analytics_gui.py:1499
+msgid "Refresh"
+msgstr "Обновить"
+
+#: jira_analytics_gui.py:1501
+msgid "Quit"
+msgstr "Выход"
+
+#: jira_analytics_gui.py:1505
+msgid "Notifications: on"
+msgstr "Уведомления: вкл"
+
+#: jira_analytics_gui.py:1505
+msgid "Notifications: off"
+msgstr "Уведомления: выкл"
+
+#: jira_analytics_gui.py:1543
+msgid "Exiting after check"
+msgstr "Выход после проверки"
+
+#: Main.qml:130 Main.qml:906
+msgctxt "Main.qml"
+msgid "Settings"
+msgstr "Настройки"
+
+#: Main.qml:143
+msgctxt "Main.qml"
+msgid "Jira access and monitoring parameters"
+msgstr "Доступ к Jira и параметры мониторинга"
+
+#: Main.qml:153
+msgctxt "Main.qml"
+msgid "Access"
+msgstr "Доступ"
+
+#: Main.qml:154
+msgctxt "Main.qml"
+msgid "Monitoring"
+msgstr "Мониторинг"
+
+#: Main.qml:174 Main.qml:568
+msgctxt "Main.qml"
+msgid "Jira URL"
+msgstr "Jira URL"
+
+#: Main.qml:181 Main.qml:581
+msgctxt "Main.qml"
+msgid "Username"
+msgstr "Пользователь"
+
+#: Main.qml:196 Main.qml:239 Main.qml:598 Main.qml:646
+msgctxt "Main.qml"
+msgid "Token"
+msgstr "Токен"
+
+#: Main.qml:218 Main.qml:239 Main.qml:621 Main.qml:646
+msgctxt "Main.qml"
+msgid "Password"
+msgstr "Пароль"
+
+#: Main.qml:259 Main.qml:666
+msgctxt "Main.qml"
+msgid "Hide"
+msgstr "Скрыть"
+
+#: Main.qml:259 Main.qml:666
+msgctxt "Main.qml"
+msgid "Show"
+msgstr "Показать"
+
+#: Main.qml:278
+msgctxt "Main.qml"
+msgid ""
+"Token or password are encrypted and stored in user env-file with 0600 "
+"permissions."
+msgstr ""
+"Токен или пароль шифруются и хранятся в env-файле пользователя с правами "
+"0600."
+
+#: Main.qml:317
+msgctxt "Main.qml"
+msgid "Warning threshold, days"
+msgstr "Порог предупреждения, дней"
+
+#: Main.qml:327
+msgctxt "Main.qml"
+msgid "First check after, minutes"
+msgstr "Первая проверка через, минут"
+
+#: Main.qml:337
+msgctxt "Main.qml"
+msgid "Check interval, minutes"
+msgstr "Интервал проверки, минут"
+
+#: Main.qml:347
+msgctxt "Main.qml"
+msgid "Connection timeout, seconds"
+msgstr "Timeout соединения, секунд"
+
+#: Main.qml:357
+msgctxt "Main.qml"
+msgid "Forgotten age threshold, days"
+msgstr "Порог забытых задач, дней"
+
+#: Main.qml:367
+msgctxt "Main.qml"
+msgid "Target date field in Jira"
+msgstr "Поле срока в Jira"
+
+#: Main.qml:372
+msgctxt "Main.qml"
+msgid "Include active sprints"
+msgstr "Включать активные спринты"
+
+#: Main.qml:377
+msgctxt "Main.qml"
+msgid "Story points field"
+msgstr "Поле Story Points"
+
+#: Main.qml:384
+msgctxt "Main.qml"
+msgid "Changelog cache TTL, hours"
+msgstr "TTL кеша истории, часов"
+
+#: Main.qml:396
+msgctxt "Main.qml"
+msgid "Full refresh history"
+msgstr "Полностью обновить историю"
+
+#: Main.qml:420
+msgctxt "Main.qml"
+msgid "Show external assignees"
+msgstr "Показывать внешних исполнителей"
+
+#: Main.qml:424
+msgctxt "Main.qml"
+msgid "Parallel workers"
+msgstr "Параллельных потоков"
+
+#: Main.qml:434
+msgctxt "Main.qml"
+msgid "Done statuses"
+msgstr "Статусы завершённых"
+
+#: Main.qml:444
+msgctxt "Main.qml"
+msgid "Active statuses"
+msgstr "Статусы в работе"
+
+#: Main.qml:454
+msgctxt "Main.qml"
+msgid "Waiting statuses"
+msgstr "Статусы ожидания"
+
+#: Main.qml:475
+msgctxt "Main.qml"
+msgid "Cancel"
+msgstr "Отмена"
+
+#: Main.qml:495
+msgctxt "Main.qml"
+msgid "Save"
+msgstr "Сохранить"
+
+#: Main.qml:549
+msgctxt "Main.qml"
+msgid "Connect to Jira"
+msgstr "Подключение к Jira"
+
+#: Main.qml:557
+msgctxt "Main.qml"
+msgid ""
+"Enter credentials and task list or JQL. If empty, all epics with Target end "
+"will be loaded."
+msgstr ""
+"Укажите доступ и список задач или JQL. Если список пустой, будут загружены "
+"все эпики с Target end."
+
+#: Main.qml:689
+msgctxt "Main.qml"
+msgid "Sources"
+msgstr "Источники"
+
+#: Main.qml:697
+msgctxt "Main.qml"
+msgid "Issues, links or JQL, one per line"
+msgstr "Задачи, ссылки или JQL, по одному на строку"
+
+#: Main.qml:705
+msgctxt "Main.qml"
+msgid "Continue"
+msgstr "Продолжить"
+
+#: Main.qml:739
+msgctxt "Main.qml"
+msgid "Analytics period"
+msgstr "Период аналитики"
+
+#: Main.qml:747
+msgctxt "Main.qml"
+msgid ""
+"Choose the reporting period. You can change it later in the YAML config."
+msgstr "Выберите отчётный период. Позже его можно изменить в YAML-конфиге."
+
+#: Main.qml:756
+msgctxt "Main.qml"
+msgid "Enable period analytics"
+msgstr "Включить аналитику за период"
+
+#: Main.qml:772
+msgctxt "Main.qml"
+msgid "Period start"
+msgstr "Начало периода"
+
+#: Main.qml:789
+msgctxt "Main.qml"
+msgid "Period end"
+msgstr "Конец периода"
+
+#: Main.qml:803
+msgctxt "Main.qml"
+msgid "Date format: DD-MM-YYYY"
+msgstr "Формат даты: ДД-ММ-ГГГГ"
+
+#: Main.qml:816
+msgctxt "Main.qml"
+msgid "Back"
+msgstr "Назад"
+
+#: Main.qml:836
+msgctxt "Main.qml"
+msgid "Save and check"
+msgstr "Сохранить и проверить"
+
+#: Main.qml:895
+msgctxt "Main.qml"
+msgid "Jira Analytics"
+msgstr "Jira Аналитика"
+
+#: Main.qml:927
+msgctxt "Main.qml"
+msgid "Notifications: on"
+msgstr "Уведомления вкл"
+
+#: Main.qml:927
+msgctxt "Main.qml"
+msgid "Notifications: off"
+msgstr "Уведомления выкл"
+
+#: Main.qml:1071
+msgctxt "Main.qml"
+msgid "Failed to load module: %1"
+msgstr "Ошибка загрузки модуля: %1"
+
+# QML strings (context = Main.qml)
+#: AssigneesTab.qml:28
+msgctxt "AssigneesTab.qml"
+msgid "Assignees performance"
+msgstr "Эффективность исполнителей"
+
+#: AssigneesTab.qml:36
+msgctxt "AssigneesTab.qml"
+msgid "Assignees are calculated from sprint tasks within the period window."
+msgstr ""
+"Статистика исполнителей собирается по задачам спринтов в окне квартала."
+
+#: AssigneesTab.qml:46
+msgctxt "AssigneesTab.qml"
+msgid "All teams"
+msgstr "Все команды"
+
+#: AssigneesTab.qml:91
+msgctxt "AssigneesTab.qml"
+msgid "Cached — click Refresh"
+msgstr "Cached — click Refresh"
+
+#: AssigneesTab.qml:92
+msgctxt "AssigneesTab.qml"
+msgid "Last refresh: %1"
+msgstr "Обновлено: %1"
+
+#: AssigneesTab.qml:100
+msgctxt "AssigneesTab.qml"
+msgid "Loading"
+msgstr "Загружается"
+
+#: AssigneesTab.qml:100
+msgctxt "AssigneesTab.qml"
+msgid "Refresh analytics"
+msgstr "Обновить аналитику"
+
+#: AssigneesTab.qml:131
+msgctxt "AssigneesTab.qml"
+msgid "People"
+msgstr "Человек"
+
+#: AssigneesTab.qml:132
+msgctxt "AssigneesTab.qml"
+msgid "Done SP"
+msgstr "Сделано SP"
+
+#: AssigneesTab.qml:133
+msgctxt "AssigneesTab.qml"
+msgid "Avg close %"
+msgstr "Средний % закрытия"
+
+#: AssigneesTab.qml:134
+msgctxt "AssigneesTab.qml"
+msgid "Total spillover"
+msgstr "Всего перетекло"
+
+#: AssigneesTab.qml:215
+msgctxt "AssigneesTab.qml"
+msgid ""
+"%1/%2 tasks · done SP %3/%4 · completion %5 · spillover %6→%7 · completed "
+"later %8 · backlog %9 · other board %10 · not observed %11 · unknown %12"
+msgstr ""
+"%1/%2 задач · SP %3/%4 · завершено %5 · перенос %6→%7 · завершено позже %8 · "
+"бэклог %9 · другая доска %10 · не обнаружено %11 · неизвестно %12"
+
+#: AssigneesTab.qml:248
+msgctxt "AssigneesTab.qml"
+msgid "Done"
+msgstr "Сделано"
+
+#: AssigneesTab.qml:249
+msgctxt "AssigneesTab.qml"
+msgid "Spillover"
+msgstr "Перетекло"
+
+#: AssigneesTab.qml:250
+msgctxt "AssigneesTab.qml"
+msgid "Backlog"
+msgstr "Беклог"
+
+#: AssigneesTab.qml:251
+msgctxt "AssigneesTab.qml"
+msgid "Other board"
+msgstr "Другая доска"
+
+#: AssigneesTab.qml:252
+msgctxt "AssigneesTab.qml"
+msgid "Not observed"
+msgstr "Не обнаружено"
+
+#: AssigneesTab.qml:253
+msgctxt "AssigneesTab.qml"
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: AssigneesTab.qml:262
+msgctxt "AssigneesTab.qml"
+msgid "Completed later"
+msgstr "Завершено позже"
+
+#: AssigneesTab.qml:280
+msgctxt "AssigneesTab.qml"
+msgid "No tasks"
+msgstr "Нет задач"
+
+#: AssigneesTab.qml:300
+msgctxt "AssigneesTab.qml"
+msgid "No assignee data loaded"
+msgstr "Данные исполнителей не загружены"
+
+#: BacklogTab.qml:33
+msgctxt "BacklogTab.qml"
+msgid "Backlog health"
+msgstr "Backlog health"
+
+#: BacklogTab.qml:41
+msgctxt "BacklogTab.qml"
+msgid "Open tasks aging: 30+/90+/180+/365+ days. Stale = no updates 90+ days."
+msgstr "Open tasks aging: 30+/90+/180+/365+ days. Stale = no updates 90+ days."
+
+#: BacklogTab.qml:52
+msgctxt "BacklogTab.qml"
+msgid "Filter"
+msgstr "Фильтр"
+
+#: BacklogTab.qml:56 BacklogTab.qml:240
+msgctxt "BacklogTab.qml"
+msgid "Stale"
+msgstr "Stale"
+
+#: BacklogTab.qml:81
+msgctxt "BacklogTab.qml"
+msgid "365+"
+msgstr "365+"
+
+#: BacklogTab.qml:106
+msgctxt "BacklogTab.qml"
+msgid "Forgotten"
+msgstr "Забытые"
+
+#: BacklogTab.qml:138
+msgctxt "BacklogTab.qml"
+msgid "Cached — click Refresh"
+msgstr "Cached — click Refresh"
+
+#: BacklogTab.qml:139
+msgctxt "BacklogTab.qml"
+msgid "Last refresh: %1"
+msgstr "Обновлено: %1"
+
+#: BacklogTab.qml:147
+msgctxt "BacklogTab.qml"
+msgid "Loading"
+msgstr "Загружается"
+
+#: BacklogTab.qml:147
+msgctxt "BacklogTab.qml"
+msgid "Refresh analytics"
+msgstr "Обновить аналитику"
+
+#: BacklogTab.qml:356
+msgctxt "BacklogTab.qml"
+msgid "No backlog health data loaded"
+msgstr "No backlog health data loaded"
+
+#: ChartsTab.qml:130
+msgctxt "ChartsTab.qml"
+msgid "Charts"
+msgstr "Графики"
+
+#: ChartsTab.qml:132
+msgctxt "ChartsTab.qml"
+msgid "Selected teams: %1"
+msgstr "Выбранные команды: %1"
+
+#: ChartsTab.qml:132
+msgctxt "ChartsTab.qml"
+msgid "All teams"
+msgstr "Все команды"
+
+#: ChartsTab.qml:140
+msgctxt "ChartsTab.qml"
+msgid "All"
+msgstr "Все"
+
+#: ChartsTab.qml:189
+msgctxt "ChartsTab.qml"
+msgid "Velocity (done SP per sprint)"
+msgstr "Скорость (сделанные SP за спринт)"
+
+#: ChartsTab.qml:190
+msgctxt "ChartsTab.qml"
+msgid ""
+"Sum of completed story points in each sprint — measures team throughput in SP"
+msgstr ""
+"Sum of completed story points in each sprint — measures team throughput in SP"
+
+#: ChartsTab.qml:218 ChartsTab.qml:300 ChartsTab.qml:381 ChartsTab.qml:465
+#: ChartsTab.qml:551 ChartsTab.qml:633 ChartsTab.qml:725 ChartsTab.qml:832
+#: ChartsTab.qml:940 ChartsTab.qml:1040
+msgctxt "ChartsTab.qml"
+msgid "No data"
+msgstr "Нет данных"
+
+#: ChartsTab.qml:271
+msgctxt "ChartsTab.qml"
+msgid "Completion (% per sprint)"
+msgstr "Завершение (% за спринт)"
+
+#: ChartsTab.qml:272
+msgctxt "ChartsTab.qml"
+msgid ""
+"Share of completed story points from the total sprint scope. 100%% = all "
+"committed work delivered"
+msgstr ""
+"Share of completed story points from the total sprint scope. 100%% = all "
+"committed work delivered"
+
+#: ChartsTab.qml:352
+msgctxt "ChartsTab.qml"
+msgid "Flow Efficiency (% per sprint)"
+msgstr "Flow Efficiency (% per sprint)"
+
+#: ChartsTab.qml:353
+msgctxt "ChartsTab.qml"
+msgid ""
+"Share of active time (In Progress, Review, Testing) in total task lifecycle. "
+"Higher = less waiting, lower = tasks stuck in queues"
+msgstr ""
+"Share of active time (In Progress, Review, Testing) in total task lifecycle. "
+"Higher = less waiting, lower = tasks stuck in queues"
+
+#: ChartsTab.qml:433
+msgctxt "ChartsTab.qml"
+msgid "Committed vs Completed (SP per sprint)"
+msgstr "Committed vs Completed (SP per sprint)"
+
+#: ChartsTab.qml:434
+msgctxt "ChartsTab.qml"
+msgid ""
+"Planned scope (lighter) compared to actually delivered (darker) per sprint. "
+"Shows whether teams over-commit"
+msgstr ""
+"Planned scope (lighter) compared to actually delivered (darker) per sprint. "
+"Shows whether teams over-commit"
+
+#: ChartsTab.qml:439
+msgctxt "ChartsTab.qml"
+msgid "Committed"
+msgstr "Committed"
+
+#: ChartsTab.qml:440
+msgctxt "ChartsTab.qml"
+msgid "Completed"
+msgstr "Completed"
+
+#: ChartsTab.qml:522
+msgctxt "ChartsTab.qml"
+msgid "Throughput (done issues per sprint)"
+msgstr "Throughput (done issues per sprint)"
+
+#: ChartsTab.qml:523
+msgctxt "ChartsTab.qml"
+msgid ""
+"Number of completed tasks regardless of their size (SP). Useful for teams "
+"with uneven task sizing"
+msgstr ""
+"Number of completed tasks regardless of their size (SP). Useful for teams "
+"with uneven task sizing"
+
+#: ChartsTab.qml:604
+msgctxt "ChartsTab.qml"
+msgid "Lead time p50 (days per sprint)"
+msgstr "Lead time p50 (days per sprint)"
+
+#: ChartsTab.qml:605
+msgctxt "ChartsTab.qml"
+msgid ""
+"Median time from task creation to completion, in days. Lower = faster "
+"delivery, rising trend = growing delays"
+msgstr ""
+"Median time from task creation to completion, in days. Lower = faster "
+"delivery, rising trend = growing delays"
+
+#: ChartsTab.qml:693
+msgctxt "ChartsTab.qml"
+msgid "Aging (days, not-done tasks)"
+msgstr "Aging (days, not-done tasks)"
+
+#: ChartsTab.qml:694
+msgctxt "ChartsTab.qml"
+msgid ""
+"Age of unfinished tasks: average (lighter) and maximum (red). High values "
+"mean incomplete work is accumulating"
+msgstr ""
+"Age of unfinished tasks: average (lighter) and maximum (red). High values "
+"mean incomplete work is accumulating"
+
+#: ChartsTab.qml:699
+msgctxt "ChartsTab.qml"
+msgid "Average"
+msgstr "Average"
+
+#: ChartsTab.qml:700
+msgctxt "ChartsTab.qml"
+msgid "Max"
+msgstr "Max"
+
+#: ChartsTab.qml:792
+msgctxt "ChartsTab.qml"
+msgid "Cumulative Flow (issues by status per sprint)"
+msgstr "Cumulative Flow (issues by status per sprint)"
+
+#: ChartsTab.qml:793
+msgctxt "ChartsTab.qml"
+msgid ""
+"Distribution of tasks by status at the end of each sprint. Wide bands = "
+"bottlenecks, narrowing = work is being completed"
+msgstr ""
+"Distribution of tasks by status at the end of each sprint. Wide bands = "
+"bottlenecks, narrowing = work is being completed"
+
+#: ChartsTab.qml:911
+msgctxt "ChartsTab.qml"
+msgid "Predictability (completion ±1σ per sprint)"
+msgstr "Predictability (completion ±1σ per sprint)"
+
+#: ChartsTab.qml:912
+msgctxt "ChartsTab.qml"
+msgid ""
+"Dashed line = average completion. Shaded band = ±1 standard deviation. "
+"Narrow band = stable delivery, wide band = unpredictable"
+msgstr ""
+"Dashed line = average completion. Shaded band = ±1 standard deviation. "
+"Narrow band = stable delivery, wide band = unpredictable"
+
+#: ChartsTab.qml:1005
+msgctxt "ChartsTab.qml"
+msgid "Spillover totals by team"
+msgstr "Итоги spillover по командам"
+
+#: ChartsTab.qml:1006
+msgctxt "ChartsTab.qml"
+msgid "Observed routes for work unfinished at sprint cutoff"
+msgstr "Наблюдаемые маршруты незавершённых задач после закрытия спринта"
+
+#: ChartsTab.qml:1012
+msgctxt "ChartsTab.qml"
+msgid "Spillover"
+msgstr "Перетекло"
+
+#: ChartsTab.qml:1013
+msgctxt "ChartsTab.qml"
+msgid "Backlog"
+msgstr "Беклог"
+
+#: ChartsTab.qml:1014
+msgctxt "ChartsTab.qml"
+msgid "Other board"
+msgstr "Другая доска"
+
+#: ChartsTab.qml:1015
+msgctxt "ChartsTab.qml"
+msgid "Not observed"
+msgstr "Не обнаружено"
+
+#: ChartsTab.qml:1016
+msgctxt "ChartsTab.qml"
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: PeriodAnalyticsTab.qml:33
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Period analytics"
+msgstr "Периодная аналитика"
+
+#: PeriodAnalyticsTab.qml:41
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Team: %1"
+msgstr "Team: %1"
+
+#: PeriodAnalyticsTab.qml:41
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "All teams"
+msgstr "Все команды"
+
+#: PeriodAnalyticsTab.qml:50
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Period, boards and Jira fields are configured in YAML."
+msgstr "Квартал, доски и поля Jira настраиваются в YAML."
+
+#: PeriodAnalyticsTab.qml:65
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Cached — click Refresh"
+msgstr "Cached — click Refresh"
+
+#: PeriodAnalyticsTab.qml:66
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Last refresh: %1"
+msgstr "Обновлено: %1"
+
+#: PeriodAnalyticsTab.qml:74
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Loading"
+msgstr "Загружается"
+
+#: PeriodAnalyticsTab.qml:74
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Refresh analytics"
+msgstr "Обновить аналитику"
+
+#: PeriodAnalyticsTab.qml:105
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Done points"
+msgstr "Сделано SP"
+
+#: PeriodAnalyticsTab.qml:106
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Avg velocity"
+msgstr "Средняя скорость"
+
+#: PeriodAnalyticsTab.qml:107
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Completion"
+msgstr "Завершено"
+
+#: PeriodAnalyticsTab.qml:108
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Not done"
+msgstr "Не сделано"
+
+#: PeriodAnalyticsTab.qml:109
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Spillover"
+msgstr "Перетекло"
+
+#: PeriodAnalyticsTab.qml:110
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "→ completed"
+msgstr "→ доделано"
+
+#: PeriodAnalyticsTab.qml:111
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Completed later"
+msgstr "Завершено позже"
+
+#: PeriodAnalyticsTab.qml:112
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Backlog"
+msgstr "Беклог"
+
+#: PeriodAnalyticsTab.qml:113
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Other board"
+msgstr "Другая доска"
+
+#: PeriodAnalyticsTab.qml:114
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Not observed"
+msgstr "Не обнаружено"
+
+#: PeriodAnalyticsTab.qml:115
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: PeriodAnalyticsTab.qml:116
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Unestimated"
+msgstr "Без оценки"
+
+#: PeriodAnalyticsTab.qml:117
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Removed"
+msgstr "Удалено"
+
+#: PeriodAnalyticsTab.qml:118
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Flow efficiency"
+msgstr "Эффективность потока"
+
+#: PeriodAnalyticsTab.qml:187
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Metric guide"
+msgstr "Обозначения метрик"
+
+#: PeriodAnalyticsTab.qml:215
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Done — task status at sprint cutoff."
+msgstr "Завершено — статус задачи на момент закрытия спринта."
+
+#: PeriodAnalyticsTab.qml:216
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Not done — status not in the done list at cutoff."
+msgstr "Не завершено — статус не в списке завершённых на момент закрытия."
+
+#: PeriodAnalyticsTab.qml:217
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Spillover — not done tasks found in later sprints."
+msgstr "Перенесено — не завершена в спринте, но есть в следующих спринтах."
+
+#: PeriodAnalyticsTab.qml:218
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Completed later — a done transition observed after sprint cutoff."
+msgstr ""
+"Завершено позже — переход в завершённый статус зафиксирован после закрытия "
+"спринта."
+
+#: PeriodAnalyticsTab.qml:219
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Backlog — not done tasks currently in backlog."
+msgstr "Возвращено — не завершена, сейчас в бэклоге."
+
+#: PeriodAnalyticsTab.qml:220
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Other board — observed in a later sprint on another configured board."
+msgstr ""
+"Другая доска — задача обнаружена в более позднем спринте другой настроенной "
+"доски."
+
+#: PeriodAnalyticsTab.qml:221
+msgctxt "PeriodAnalyticsTab.qml"
+msgid ""
+"Not observed — absent from successfully loaded later sprints and backlog "
+"query."
+msgstr ""
+"Не обнаружено — задача отсутствует в успешно загруженных последующих "
+"спринтах и результате запроса бэклога."
+
+#: PeriodAnalyticsTab.qml:222
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Unknown — data sources were incomplete."
+msgstr "Неизвестно — источники данных загружены не полностью."
+
+#: PeriodAnalyticsTab.qml:223
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Removed — removed from sprint report."
+msgstr "Удалено — удалена из спринта."
+
+#: PeriodAnalyticsTab.qml:258
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Teams"
+msgstr "Команд"
+
+#: PeriodAnalyticsTab.qml:303
+msgctxt "PeriodAnalyticsTab.qml"
+msgid ""
+"%1 / %2 SP · velocity %3 · completion %4 · not done %5 · spillover %6→%7 · "
+"backlog %8 · other board %9 · not observed %10 · unknown %11 · removed %12"
+msgstr ""
+"%1 / %2 SP · скорость %3 · завершение %4 · не сделано %5 · перетекло %6→%7 · "
+"бэклог %8 · другая доска %9 · не обнаружено %10 · неизвестно %11 · удалено "
+"%12"
+
+#: PeriodAnalyticsTab.qml:330
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "No team data loaded"
+msgstr "Данные команд не загружены"
+
+#: PeriodAnalyticsTab.qml:352
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Sprints"
+msgstr "Спринтов"
+
+#: PeriodAnalyticsTab.qml:389
+msgctxt "PeriodAnalyticsTab.qml"
+msgid ""
+"done %1/%2 · done SP %3 · completion %4 · not done %5 · spillover %6→%7 · "
+"backlog %8 · other board %9 · not observed %10 · unknown %11 · removed %12"
+msgstr ""
+"сделано %1/%2 · SP %3 · завершено %4 · не сделано %5 · перетекло %6→%7 · "
+"бэклог %8 · другая доска %9 · не обнаружено %10 · неизвестно %11 · удалено "
+"%12"
+
+#: PeriodAnalyticsTab.qml:415
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "No sprint data loaded"
+msgstr "Данные спринтов не загружены"
+
+#: PeriodAnalyticsTab.qml:435
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Analytics errors"
+msgstr "Ошибки аналитики"
+
+#: TargetEndTab.qml:14
+msgctxt "TargetEndTab.qml"
+msgid "Overdue %1 days"
+msgstr "Просрочено %1 дн."
+
+#: TargetEndTab.qml:14
+msgctxt "TargetEndTab.qml"
+msgid "%1 days left"
+msgstr "Осталось %1 дн."
+
+#: TargetEndTab.qml:37
+msgctxt "TargetEndTab.qml"
+msgid "At risk"
+msgstr "В зоне внимания"
+
+#: TargetEndTab.qml:44
+msgctxt "TargetEndTab.qml"
+msgid "Status"
+msgstr "Состояние"
+
+#: TargetEndTab.qml:45 TargetEndTab.qml:50
+msgctxt "TargetEndTab.qml"
+msgid "Checking"
+msgstr "Проверяется"
+
+#: TargetEndTab.qml:45
+msgctxt "TargetEndTab.qml"
+msgid "Ready"
+msgstr "Готово"
+
+#: TargetEndTab.qml:50
+msgctxt "TargetEndTab.qml"
+msgid "Check"
+msgstr "Проверить"
+
+#: TargetEndTab.qml:182
+msgctxt "TargetEndTab.qml"
+msgid "Status: %1 · Assignee: %2"
+msgstr "Статус: %1 · Исполнитель: %2"
+
+#: TargetEndTab.qml:203
+msgctxt "TargetEndTab.qml"
+msgid "No issues at risk"
+msgstr "Нет задач в зоне риска"
+
+#: TargetEndTab.qml:221
+msgctxt "TargetEndTab.qml"
+msgid "Check errors"
+msgstr "Ошибки проверки"
+
+#: TargetEndTab.qml:249
+msgctxt "TargetEndTab.qml"
+msgid "Jira sources"
+msgstr "Источники Jira"
+
+#: TargetEndTab.qml:257
+msgctxt "TargetEndTab.qml"
+msgid "Issues, links or JQL, one per line."
+msgstr "Задачи, ссылки или JQL, по одному на строку."
+
+#: TargetEndTab.qml:281
+msgctxt "TargetEndTab.qml"
+msgid "Issues, links or JQL"
+msgstr "Задачи, ссылки или JQL"
+
+#: TargetEndTab.qml:289
+msgctxt "TargetEndTab.qml"
+msgid "Update and hide"
+msgstr "Обновить и скрыть"
+
+#: TargetEndTab.qml:289
+msgctxt "TargetEndTab.qml"
+msgid "Edit list"
+msgstr "Редактировать список"
+
+#: TargetEndTab.qml:316
+msgctxt "TargetEndTab.qml"
+msgid "Click on an issue to open it in the browser."
+msgstr "Карточка задачи открывается кликом в браузере."
+
+#~ msgid "Username and token or password required"
+#~ msgstr "Нужны имя пользователя и токен или пароль"
+
+#~ msgctxt "AssigneesTab.qml"
+#~ msgid "Reassigned"
+#~ msgstr "Ушли другим"
+
+#~ msgctxt "AssigneesTab.qml"
+#~ msgid "No spillover tasks"
+#~ msgstr "Нет перетекших задач"
+
+#~ msgctxt "AssigneesTab.qml"
+#~ msgid "No reassigned tasks"
+#~ msgstr "Нет ушедших задач"
+
+#~ msgctxt "ChartsTab.qml"
+#~ msgid ""
+#~ "Unfinished work carried to future sprints, backlog items added mid-"
+#~ "stream, and reassigned tasks"
+#~ msgstr ""
+#~ "Unfinished work carried to future sprints, backlog items added mid-"
+#~ "stream, and reassigned tasks"
+
+#~ msgctxt "ChartsTab.qml"
+#~ msgid "Reassigned"
+#~ msgstr "Ушли другим"
+
+#~ msgctxt "PeriodAnalyticsTab.qml"
+#~ msgid "Reassigned"
+#~ msgstr "Ушли другим"
+
+#~ msgctxt "PeriodAnalyticsTab.qml"
+#~ msgid "Reassigned — not found in later sprints or backlog."
+#~ msgstr "Передано — не найдена ни в следующих спринтах, ни в бэклоге."

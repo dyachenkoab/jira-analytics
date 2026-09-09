@@ -1,0 +1,38 @@
+# Пример конфига санитизации для Jira-проекта.
+# Формат:
+#   patterns: список regex-правил {pattern, replacement, flags?}
+#   literal: список точных текстовых замен {text, replacement}
+#   env_keys: имена переменных окружения, чьи значения маскировать
+
+patterns:
+  - pattern: '\b[A-Z]+-\d+\b'
+    replacement: '[KEY-REDACTED]'
+
+  - pattern: "(?i)\\bastra([-\\s]?linux)?\\b"
+    replacement: '[REDACTED]'
+
+  - pattern: '"summary"\s*:\s*"(?:[^"\\]|\\.)*"'
+    replacement: '"summary": "[REDACTED]"'
+
+  - pattern: 'summary\s*=\s*.*'
+    replacement: 'summary=[REDACTED]'
+
+  - pattern: 'fromString\s*\":\s*.*'
+    replacement: 'fromString":["REDACTED"],'
+
+  - pattern: 'toString\s*\":\s*.*'
+    replacement: 'toString":["REDACTED"]'
+
+literal:
+  - text: 'Astra Linux'
+    replacement: '[REDACTED]'
+  - text: 'astra linux'
+    replacement: '[REDACTED]'
+  - text: 'astralinux'
+    replacement: '[REDACTED]'
+  - text: 'astra'
+    replacement: '[REDACTED]'
+
+env_keys:
+  - JIRA_TOKEN
+  - JIRA_PASSWORD

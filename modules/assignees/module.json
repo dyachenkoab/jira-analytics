@@ -1,0 +1,7 @@
+{
+  "id": "assignees",
+  "title": "Assignees",
+  "qml": "AssigneesTab.qml",
+  "order": 30,
+  "apiVersion": 1
+}

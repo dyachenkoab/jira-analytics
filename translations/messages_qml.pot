@@ -1,0 +1,852 @@
+#: Main.qml:130
+#: Main.qml:906
+msgctxt "Main.qml"
+msgid "Settings"
+msgstr ""
+
+#: Main.qml:143
+msgctxt "Main.qml"
+msgid "Jira access and monitoring parameters"
+msgstr ""
+
+#: Main.qml:153
+msgctxt "Main.qml"
+msgid "Access"
+msgstr ""
+
+#: Main.qml:154
+msgctxt "Main.qml"
+msgid "Monitoring"
+msgstr ""
+
+#: Main.qml:174
+#: Main.qml:568
+msgctxt "Main.qml"
+msgid "Jira URL"
+msgstr ""
+
+#: Main.qml:181
+#: Main.qml:581
+msgctxt "Main.qml"
+msgid "Username"
+msgstr ""
+
+#: Main.qml:196
+#: Main.qml:239
+#: Main.qml:598
+#: Main.qml:646
+msgctxt "Main.qml"
+msgid "Token"
+msgstr ""
+
+#: Main.qml:218
+#: Main.qml:239
+#: Main.qml:621
+#: Main.qml:646
+msgctxt "Main.qml"
+msgid "Password"
+msgstr ""
+
+#: Main.qml:259
+#: Main.qml:666
+msgctxt "Main.qml"
+msgid "Hide"
+msgstr ""
+
+#: Main.qml:259
+#: Main.qml:666
+msgctxt "Main.qml"
+msgid "Show"
+msgstr ""
+
+#: Main.qml:278
+msgctxt "Main.qml"
+msgid "Token or password are encrypted and stored in user env-file with 0600 permissions."
+msgstr ""
+
+#: Main.qml:317
+msgctxt "Main.qml"
+msgid "Warning threshold, days"
+msgstr ""
+
+#: Main.qml:327
+msgctxt "Main.qml"
+msgid "First check after, minutes"
+msgstr ""
+
+#: Main.qml:337
+msgctxt "Main.qml"
+msgid "Check interval, minutes"
+msgstr ""
+
+#: Main.qml:347
+msgctxt "Main.qml"
+msgid "Connection timeout, seconds"
+msgstr ""
+
+#: Main.qml:357
+msgctxt "Main.qml"
+msgid "Forgotten age threshold, days"
+msgstr ""
+
+#: Main.qml:367
+msgctxt "Main.qml"
+msgid "Target date field in Jira"
+msgstr ""
+
+#: Main.qml:372
+msgctxt "Main.qml"
+msgid "Include active sprints"
+msgstr ""
+
+#: Main.qml:377
+msgctxt "Main.qml"
+msgid "Story points field"
+msgstr ""
+
+#: Main.qml:384
+msgctxt "Main.qml"
+msgid "Changelog cache TTL, hours"
+msgstr ""
+
+#: Main.qml:396
+msgctxt "Main.qml"
+msgid "Full refresh history"
+msgstr ""
+
+#: Main.qml:420
+msgctxt "Main.qml"
+msgid "Show external assignees"
+msgstr ""
+
+#: Main.qml:424
+msgctxt "Main.qml"
+msgid "Parallel workers"
+msgstr ""
+
+#: Main.qml:434
+msgctxt "Main.qml"
+msgid "Done statuses"
+msgstr ""
+
+#: Main.qml:444
+msgctxt "Main.qml"
+msgid "Active statuses"
+msgstr ""
+
+#: Main.qml:454
+msgctxt "Main.qml"
+msgid "Waiting statuses"
+msgstr ""
+
+#: Main.qml:475
+msgctxt "Main.qml"
+msgid "Cancel"
+msgstr ""
+
+#: Main.qml:495
+msgctxt "Main.qml"
+msgid "Save"
+msgstr ""
+
+#: Main.qml:549
+msgctxt "Main.qml"
+msgid "Connect to Jira"
+msgstr ""
+
+#: Main.qml:557
+msgctxt "Main.qml"
+msgid "Enter credentials and task list or JQL. If empty, all epics with Target end will be loaded."
+msgstr ""
+
+#: Main.qml:689
+msgctxt "Main.qml"
+msgid "Sources"
+msgstr ""
+
+#: Main.qml:697
+msgctxt "Main.qml"
+msgid "Issues, links or JQL, one per line"
+msgstr ""
+
+#: Main.qml:705
+msgctxt "Main.qml"
+msgid "Continue"
+msgstr ""
+
+#: Main.qml:739
+msgctxt "Main.qml"
+msgid "Analytics period"
+msgstr ""
+
+#: Main.qml:747
+msgctxt "Main.qml"
+msgid "Choose the reporting period. You can change it later in the YAML config."
+msgstr ""
+
+#: Main.qml:756
+msgctxt "Main.qml"
+msgid "Enable period analytics"
+msgstr ""
+
+#: Main.qml:772
+msgctxt "Main.qml"
+msgid "Period start"
+msgstr ""
+
+#: Main.qml:789
+msgctxt "Main.qml"
+msgid "Period end"
+msgstr ""
+
+#: Main.qml:803
+msgctxt "Main.qml"
+msgid "Date format: DD-MM-YYYY"
+msgstr ""
+
+#: Main.qml:816
+msgctxt "Main.qml"
+msgid "Back"
+msgstr ""
+
+#: Main.qml:836
+msgctxt "Main.qml"
+msgid "Save and check"
+msgstr ""
+
+#: Main.qml:895
+msgctxt "Main.qml"
+msgid "Jira Analytics"
+msgstr ""
+
+#: Main.qml:927
+msgctxt "Main.qml"
+msgid "Notifications: on"
+msgstr ""
+
+#: Main.qml:927
+msgctxt "Main.qml"
+msgid "Notifications: off"
+msgstr ""
+
+#: Main.qml:1071
+msgctxt "Main.qml"
+msgid "Failed to load module: %1"
+msgstr ""
+
+#: AssigneesTab.qml:28
+msgctxt "AssigneesTab.qml"
+msgid "Assignees performance"
+msgstr ""
+
+#: AssigneesTab.qml:36
+msgctxt "AssigneesTab.qml"
+msgid "Assignees are calculated from sprint tasks within the period window."
+msgstr ""
+
+#: AssigneesTab.qml:46
+#: AssigneesTab.qml:46
+msgctxt "AssigneesTab.qml"
+msgid "All teams"
+msgstr ""
+
+#: AssigneesTab.qml:91
+msgctxt "AssigneesTab.qml"
+msgid "Cached — click Refresh"
+msgstr ""
+
+#: AssigneesTab.qml:92
+msgctxt "AssigneesTab.qml"
+msgid "Last refresh: %1"
+msgstr ""
+
+#: AssigneesTab.qml:100
+msgctxt "AssigneesTab.qml"
+msgid "Loading"
+msgstr ""
+
+#: AssigneesTab.qml:100
+msgctxt "AssigneesTab.qml"
+msgid "Refresh analytics"
+msgstr ""
+
+#: AssigneesTab.qml:131
+msgctxt "AssigneesTab.qml"
+msgid "People"
+msgstr ""
+
+#: AssigneesTab.qml:132
+msgctxt "AssigneesTab.qml"
+msgid "Done SP"
+msgstr ""
+
+#: AssigneesTab.qml:133
+msgctxt "AssigneesTab.qml"
+msgid "Avg close %"
+msgstr ""
+
+#: AssigneesTab.qml:134
+msgctxt "AssigneesTab.qml"
+msgid "Total spillover"
+msgstr ""
+
+#: AssigneesTab.qml:215
+msgctxt "AssigneesTab.qml"
+msgid "%1/%2 tasks · done SP %3/%4 · completion %5 · spillover %6→%7 · completed later %8 · backlog %9 · other board %10 · not observed %11 · unknown %12"
+msgstr ""
+
+#: AssigneesTab.qml:248
+msgctxt "AssigneesTab.qml"
+msgid "Done"
+msgstr ""
+
+#: AssigneesTab.qml:249
+msgctxt "AssigneesTab.qml"
+msgid "Spillover"
+msgstr ""
+
+#: AssigneesTab.qml:250
+msgctxt "AssigneesTab.qml"
+msgid "Backlog"
+msgstr ""
+
+#: AssigneesTab.qml:251
+msgctxt "AssigneesTab.qml"
+msgid "Other board"
+msgstr ""
+
+#: AssigneesTab.qml:252
+msgctxt "AssigneesTab.qml"
+msgid "Not observed"
+msgstr ""
+
+#: AssigneesTab.qml:253
+msgctxt "AssigneesTab.qml"
+msgid "Unknown"
+msgstr ""
+
+#: AssigneesTab.qml:262
+msgctxt "AssigneesTab.qml"
+msgid "Completed later"
+msgstr ""
+
+#: AssigneesTab.qml:280
+msgctxt "AssigneesTab.qml"
+msgid "No tasks"
+msgstr ""
+
+#: AssigneesTab.qml:300
+msgctxt "AssigneesTab.qml"
+msgid "No assignee data loaded"
+msgstr ""
+
+#: BacklogTab.qml:33
+msgctxt "BacklogTab.qml"
+msgid "Backlog health"
+msgstr ""
+
+#: BacklogTab.qml:41
+msgctxt "BacklogTab.qml"
+msgid "Open tasks aging: 30+/90+/180+/365+ days. Stale = no updates 90+ days."
+msgstr ""
+
+#: BacklogTab.qml:52
+msgctxt "BacklogTab.qml"
+msgid "Filter"
+msgstr ""
+
+#: BacklogTab.qml:56
+#: BacklogTab.qml:240
+msgctxt "BacklogTab.qml"
+msgid "Stale"
+msgstr ""
+
+#: BacklogTab.qml:81
+msgctxt "BacklogTab.qml"
+msgid "365+"
+msgstr ""
+
+#: BacklogTab.qml:106
+msgctxt "BacklogTab.qml"
+msgid "Forgotten"
+msgstr ""
+
+#: BacklogTab.qml:138
+msgctxt "BacklogTab.qml"
+msgid "Cached — click Refresh"
+msgstr ""
+
+#: BacklogTab.qml:139
+msgctxt "BacklogTab.qml"
+msgid "Last refresh: %1"
+msgstr ""
+
+#: BacklogTab.qml:147
+msgctxt "BacklogTab.qml"
+msgid "Loading"
+msgstr ""
+
+#: BacklogTab.qml:147
+msgctxt "BacklogTab.qml"
+msgid "Refresh analytics"
+msgstr ""
+
+#: BacklogTab.qml:356
+msgctxt "BacklogTab.qml"
+msgid "No backlog health data loaded"
+msgstr ""
+
+#: ChartsTab.qml:130
+msgctxt "ChartsTab.qml"
+msgid "Charts"
+msgstr ""
+
+#: ChartsTab.qml:132
+msgctxt "ChartsTab.qml"
+msgid "Selected teams: %1"
+msgstr ""
+
+#: ChartsTab.qml:132
+msgctxt "ChartsTab.qml"
+msgid "All teams"
+msgstr ""
+
+#: ChartsTab.qml:140
+msgctxt "ChartsTab.qml"
+msgid "All"
+msgstr ""
+
+#: ChartsTab.qml:189
+msgctxt "ChartsTab.qml"
+msgid "Velocity (done SP per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:190
+msgctxt "ChartsTab.qml"
+msgid "Sum of completed story points in each sprint — measures team throughput in SP"
+msgstr ""
+
+#: ChartsTab.qml:218
+#: ChartsTab.qml:300
+#: ChartsTab.qml:381
+#: ChartsTab.qml:465
+#: ChartsTab.qml:551
+#: ChartsTab.qml:633
+#: ChartsTab.qml:725
+#: ChartsTab.qml:832
+#: ChartsTab.qml:940
+#: ChartsTab.qml:1040
+msgctxt "ChartsTab.qml"
+msgid "No data"
+msgstr ""
+
+#: ChartsTab.qml:271
+msgctxt "ChartsTab.qml"
+msgid "Completion (% per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:272
+msgctxt "ChartsTab.qml"
+msgid "Share of completed story points from the total sprint scope. 100%% = all committed work delivered"
+msgstr ""
+
+#: ChartsTab.qml:352
+msgctxt "ChartsTab.qml"
+msgid "Flow Efficiency (% per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:353
+msgctxt "ChartsTab.qml"
+msgid "Share of active time (In Progress, Review, Testing) in total task lifecycle. Higher = less waiting, lower = tasks stuck in queues"
+msgstr ""
+
+#: ChartsTab.qml:433
+msgctxt "ChartsTab.qml"
+msgid "Committed vs Completed (SP per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:434
+msgctxt "ChartsTab.qml"
+msgid "Planned scope (lighter) compared to actually delivered (darker) per sprint. Shows whether teams over-commit"
+msgstr ""
+
+#: ChartsTab.qml:439
+msgctxt "ChartsTab.qml"
+msgid "Committed"
+msgstr ""
+
+#: ChartsTab.qml:440
+msgctxt "ChartsTab.qml"
+msgid "Completed"
+msgstr ""
+
+#: ChartsTab.qml:522
+msgctxt "ChartsTab.qml"
+msgid "Throughput (done issues per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:523
+msgctxt "ChartsTab.qml"
+msgid "Number of completed tasks regardless of their size (SP). Useful for teams with uneven task sizing"
+msgstr ""
+
+#: ChartsTab.qml:604
+msgctxt "ChartsTab.qml"
+msgid "Lead time p50 (days per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:605
+msgctxt "ChartsTab.qml"
+msgid "Median time from task creation to completion, in days. Lower = faster delivery, rising trend = growing delays"
+msgstr ""
+
+#: ChartsTab.qml:693
+msgctxt "ChartsTab.qml"
+msgid "Aging (days, not-done tasks)"
+msgstr ""
+
+#: ChartsTab.qml:694
+msgctxt "ChartsTab.qml"
+msgid "Age of unfinished tasks: average (lighter) and maximum (red). High values mean incomplete work is accumulating"
+msgstr ""
+
+#: ChartsTab.qml:699
+msgctxt "ChartsTab.qml"
+msgid "Average"
+msgstr ""
+
+#: ChartsTab.qml:700
+msgctxt "ChartsTab.qml"
+msgid "Max"
+msgstr ""
+
+#: ChartsTab.qml:792
+msgctxt "ChartsTab.qml"
+msgid "Cumulative Flow (issues by status per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:793
+msgctxt "ChartsTab.qml"
+msgid "Distribution of tasks by status at the end of each sprint. Wide bands = bottlenecks, narrowing = work is being completed"
+msgstr ""
+
+#: ChartsTab.qml:911
+msgctxt "ChartsTab.qml"
+msgid "Predictability (completion ±1σ per sprint)"
+msgstr ""
+
+#: ChartsTab.qml:912
+msgctxt "ChartsTab.qml"
+msgid "Dashed line = average completion. Shaded band = ±1 standard deviation. Narrow band = stable delivery, wide band = unpredictable"
+msgstr ""
+
+#: ChartsTab.qml:1005
+msgctxt "ChartsTab.qml"
+msgid "Spillover totals by team"
+msgstr ""
+
+#: ChartsTab.qml:1006
+msgctxt "ChartsTab.qml"
+msgid "Observed routes for work unfinished at sprint cutoff"
+msgstr ""
+
+#: ChartsTab.qml:1012
+msgctxt "ChartsTab.qml"
+msgid "Spillover"
+msgstr ""
+
+#: ChartsTab.qml:1013
+msgctxt "ChartsTab.qml"
+msgid "Backlog"
+msgstr ""
+
+#: ChartsTab.qml:1014
+msgctxt "ChartsTab.qml"
+msgid "Other board"
+msgstr ""
+
+#: ChartsTab.qml:1015
+msgctxt "ChartsTab.qml"
+msgid "Not observed"
+msgstr ""
+
+#: ChartsTab.qml:1016
+msgctxt "ChartsTab.qml"
+msgid "Unknown"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:33
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Period analytics"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:41
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Team: %1"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:41
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "All teams"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:50
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Period, boards and Jira fields are configured in YAML."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:65
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Cached — click Refresh"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:66
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Last refresh: %1"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:74
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Loading"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:74
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Refresh analytics"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:105
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Done points"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:106
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Avg velocity"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:107
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Completion"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:108
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Not done"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:109
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Spillover"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:110
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "→ completed"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:111
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Completed later"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:112
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Backlog"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:113
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Other board"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:114
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Not observed"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:115
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Unknown"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:116
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Unestimated"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:117
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Removed"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:118
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Flow efficiency"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:187
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Metric guide"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:215
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Done — task status at sprint cutoff."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:216
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Not done — status not in the done list at cutoff."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:217
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Spillover — not done tasks found in later sprints."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:218
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Completed later — a done transition observed after sprint cutoff."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:219
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Backlog — not done tasks currently in backlog."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:220
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Other board — observed in a later sprint on another configured board."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:221
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Not observed — absent from successfully loaded later sprints and backlog query."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:222
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Unknown — data sources were incomplete."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:223
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Removed — removed from sprint report."
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:258
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Teams"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:303
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "%1 / %2 SP · velocity %3 · completion %4 · not done %5 · spillover %6→%7 · backlog %8 · other board %9 · not observed %10 · unknown %11 · removed %12"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:330
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "No team data loaded"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:352
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Sprints"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:389
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "done %1/%2 · done SP %3 · completion %4 · not done %5 · spillover %6→%7 · backlog %8 · other board %9 · not observed %10 · unknown %11 · removed %12"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:415
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "No sprint data loaded"
+msgstr ""
+
+#: PeriodAnalyticsTab.qml:435
+msgctxt "PeriodAnalyticsTab.qml"
+msgid "Analytics errors"
+msgstr ""
+
+#: TargetEndTab.qml:14
+msgctxt "TargetEndTab.qml"
+msgid "Overdue %1 days"
+msgstr ""
+
+#: TargetEndTab.qml:14
+msgctxt "TargetEndTab.qml"
+msgid "%1 days left"
+msgstr ""
+
+#: TargetEndTab.qml:37
+msgctxt "TargetEndTab.qml"
+msgid "At risk"
+msgstr ""
+
+#: TargetEndTab.qml:44
+msgctxt "TargetEndTab.qml"
+msgid "Status"
+msgstr ""
+
+#: TargetEndTab.qml:45
+#: TargetEndTab.qml:50
+msgctxt "TargetEndTab.qml"
+msgid "Checking"
+msgstr ""
+
+#: TargetEndTab.qml:45
+msgctxt "TargetEndTab.qml"
+msgid "Ready"
+msgstr ""
+
+#: TargetEndTab.qml:50
+msgctxt "TargetEndTab.qml"
+msgid "Check"
+msgstr ""
+
+#: TargetEndTab.qml:182
+msgctxt "TargetEndTab.qml"
+msgid "Status: %1 · Assignee: %2"
+msgstr ""
+
+#: TargetEndTab.qml:203
+msgctxt "TargetEndTab.qml"
+msgid "No issues at risk"
+msgstr ""
+
+#: TargetEndTab.qml:221
+msgctxt "TargetEndTab.qml"
+msgid "Check errors"
+msgstr ""
+
+#: TargetEndTab.qml:249
+msgctxt "TargetEndTab.qml"
+msgid "Jira sources"
+msgstr ""
+
+#: TargetEndTab.qml:257
+msgctxt "TargetEndTab.qml"
+msgid "Issues, links or JQL, one per line."
+msgstr ""
+
+#: TargetEndTab.qml:281
+msgctxt "TargetEndTab.qml"
+msgid "Issues, links or JQL"
+msgstr ""
+
+#: TargetEndTab.qml:289
+msgctxt "TargetEndTab.qml"
+msgid "Update and hide"
+msgstr ""
+
+#: TargetEndTab.qml:289
+msgctxt "TargetEndTab.qml"
+msgid "Edit list"
+msgstr ""
+
+#: TargetEndTab.qml:316
+msgctxt "TargetEndTab.qml"
+msgid "Click on an issue to open it in the browser."
+msgstr ""

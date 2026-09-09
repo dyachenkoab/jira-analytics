@@ -1,0 +1,7 @@
+{
+  "id": "backlog_health",
+  "title": "Backlog health",
+  "qml": "BacklogTab.qml",
+  "order": 20,
+  "apiVersion": 1
+}

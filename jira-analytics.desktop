@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Jira Analytics
+Comment=Jira analytics and Target end tray app
+Exec=jira-analytics-gui
+Icon=dialog-warning
+Terminal=false
+Categories=Utility;
+X-GNOME-Autostart-enabled=true

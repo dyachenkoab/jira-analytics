@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+execute_before_dh_install:
+	msgfmt translations/ru/LC_MESSAGES/jira_qt.po -o translations/ru/LC_MESSAGES/jira_qt.mo
+
+execute_after_dh_install:
+	mv debian/jira-analytics/usr/bin/jira_analytics_gui.py debian/jira-analytics/usr/bin/jira-analytics-gui
+	chmod 0755 debian/jira-analytics/usr/bin/jira-analytics-gui

@@ -1,0 +1,15 @@
+jira_analytics.py usr/lib/python3/dist-packages/
+jira_period_analytics.py usr/lib/python3/dist-packages/
+jira_modules.py usr/lib/python3/dist-packages/
+translations.py usr/lib/python3/dist-packages/
+logs_sanitizer.py usr/lib/python3/dist-packages/
+jira_analytics_gui.py usr/bin/
+qml/Main.qml usr/share/jira-analytics/qml/
+modules usr/share/jira-analytics/
+translations/ru/LC_MESSAGES/jira_qt.mo usr/share/jira-analytics/translations/ru/LC_MESSAGES/
+jira-analytics.desktop etc/xdg/autostart/
+jira-analytics.desktop usr/share/applications/
+jira-analytics.yaml.example usr/share/doc/jira-analytics/examples/
+jira-analytics.env.example usr/share/doc/jira-analytics/examples/
+sanitize.yaml usr/share/doc/jira-analytics/examples/
+docs/custom_metrics usr/share/doc/jira-analytics/

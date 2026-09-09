@@ -1,0 +1,405 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 09:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: jira_analytics.py:196 jira_analytics.py:565
+msgid "PyYAML not installed: install python3-yaml package"
+msgstr ""
+
+#: jira_analytics.py:202
+msgid "YAML must be a dict or a list of strings"
+msgstr ""
+
+#: jira_analytics.py:205
+msgid "Field 'items' must be a list"
+msgstr ""
+
+#: jira_analytics.py:208 jira_analytics.py:254
+#, python-format
+msgid "Field '%s' must be a boolean"
+msgstr ""
+
+#: jira_analytics.py:218
+msgid "period_start must be YYYY-MM-DD"
+msgstr ""
+
+#: jira_analytics.py:220
+msgid "period_end must be YYYY-MM-DD"
+msgstr ""
+
+#: jira_analytics.py:222
+msgid "period_start and period_end must both be set or both be empty"
+msgstr ""
+
+#: jira_analytics.py:224
+msgid "period_end must be greater than or equal to period_start"
+msgstr ""
+
+#: jira_analytics.py:276
+msgid "Field 'boards' must be a list"
+msgstr ""
+
+#: jira_analytics.py:280
+msgid "Each board must be a dict with id and name"
+msgstr ""
+
+#: jira_analytics.py:285
+msgid "Each board must have id and name"
+msgstr ""
+
+#: jira_analytics.py:288
+msgid "Each board's backlog_jql must be a string if present"
+msgstr ""
+
+#: jira_analytics.py:306
+#, python-format
+msgid "Field '%s' must be a list"
+msgstr ""
+
+#: jira_analytics.py:312 jira_analytics_gui.py:781 jira_analytics_gui.py:860
+#, python-format
+msgid "Config file not found: %s"
+msgstr ""
+
+#: jira_analytics.py:646
+msgid ""
+"atlassian-python-api not installed: run python3 -m pip install --user "
+"atlassian-python-api"
+msgstr ""
+
+#: jira_analytics.py:654
+msgid "JIRA_URL, JIRA_USERNAME and JIRA_TOKEN or JIRA_PASSWORD are required"
+msgstr ""
+
+#: jira_analytics.py:669
+#, python-format
+msgid "Jira field not found: %s"
+msgstr ""
+
+#: jira_analytics.py:708
+msgid "Failed to send notification: gdbus command not found"
+msgstr ""
+
+#: jira_analytics.py:712
+#, python-format
+msgid "Failed to send notification: %s"
+msgstr ""
+
+#: jira_analytics.py:718
+msgid "Jira: Target end overdue"
+msgstr ""
+
+#: jira_analytics.py:719
+#, python-format
+msgid "Overdue by %s days"
+msgstr ""
+
+#: jira_analytics.py:721
+msgid "Jira: Target end approaching"
+msgstr ""
+
+#: jira_analytics.py:722
+#, python-format
+msgid "%s days left"
+msgstr ""
+
+#: jira_analytics.py:723
+#, python-format
+msgid ""
+"Status: %s\n"
+"Target end: %s\n"
+"%s\n"
+"%s"
+msgstr ""
+
+#: jira_analytics.py:741
+msgid "Unassigned"
+msgstr ""
+
+#: jira_analytics.py:888
+msgid "period_start and period_end are required when analytics_enabled is true"
+msgstr ""
+
+#: jira_analytics.py:915
+#, python-format
+msgid "Loading %s boards"
+msgstr ""
+
+#: jira_analytics.py:918
+#, python-format
+msgid "Board %s: sprints"
+msgstr ""
+
+#: jira_analytics.py:924
+#, python-format
+msgid "Error loading board %s: %s"
+msgstr ""
+
+#: jira_analytics.py:948
+#, python-format
+msgid "Sprint %s skipped: missing dates"
+msgstr ""
+
+#: jira_analytics.py:965
+#, python-format
+msgid "Loaded %s sprints"
+msgstr ""
+
+#: jira_analytics.py:973
+#, python-format
+msgid "Loading sprint issues: %s/%s"
+msgstr ""
+
+#: jira_analytics.py:994 jira_analytics.py:1006
+#, python-format
+msgid "Sprint report unavailable, removed data skipped: %s"
+msgstr ""
+
+#: jira_analytics.py:999
+#, python-format
+msgid "Error loading sprint %s: %s"
+msgstr ""
+
+#: jira_analytics.py:1036
+#, python-format
+msgid "Sprint issues loaded: %s sprints"
+msgstr ""
+
+#: jira_analytics.py:1049
+#, python-format
+msgid "Error loading backlog for %s: %s"
+msgstr ""
+
+#: jira_analytics.py:1054
+#, python-format
+msgid "Loading backlog: %s/%s"
+msgstr ""
+
+#: jira_analytics.py:1059
+#, python-format
+msgid "Backlog loaded: %s boards"
+msgstr ""
+
+#: jira_analytics.py:1086
+#, python-format
+msgid "Changelogs: %s/%s"
+msgstr ""
+
+#: jira_analytics.py:1092
+#, python-format
+msgid "Changelog not available for %s, using current status"
+msgstr ""
+
+#: jira_analytics.py:1095
+#, python-format
+msgid "Changelogs loaded: %s keys"
+msgstr ""
+
+#: jira_analytics.py:1119
+msgid "Calculating metrics"
+msgstr ""
+
+#: jira_analytics.py:1138
+#, python-format
+msgid "Failed to save analytics source cache: %s"
+msgstr ""
+
+#: jira_analytics.py:1168
+#, python-format
+msgid "Error checking %s: %s"
+msgstr ""
+
+#: jira_analytics.py:1179
+#, python-format
+msgid "Notification sent: %s"
+msgstr ""
+
+#: jira_analytics.py:1181
+#, python-format
+msgid "Notifications sent: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:30
+msgctxt "Main.qml"
+msgid "Target end"
+msgstr ""
+
+#: jira_analytics_gui.py:31
+msgctxt "Main.qml"
+msgid "Period analytics"
+msgstr ""
+
+#: jira_analytics_gui.py:32
+msgctxt "Main.qml"
+msgid "Backlog health"
+msgstr ""
+
+#: jira_analytics_gui.py:33
+msgctxt "Main.qml"
+msgid "Assignees"
+msgstr ""
+
+#: jira_analytics_gui.py:34
+msgctxt "Main.qml"
+msgid "Charts"
+msgstr ""
+
+#: jira_analytics_gui.py:629
+msgid "Data saved"
+msgstr ""
+
+#: jira_analytics_gui.py:650
+msgid "Jira URL, username and token or password are required"
+msgstr ""
+
+#: jira_analytics_gui.py:658
+msgid "Both period dates are required when analytics is enabled"
+msgstr ""
+
+#: jira_analytics_gui.py:661
+msgid "Both period dates must be set or both be empty"
+msgstr ""
+
+#: jira_analytics_gui.py:664
+msgid "Period dates must use DD-MM-YYYY"
+msgstr ""
+
+#: jira_analytics_gui.py:667
+msgid "Period end must be greater than or equal to period start"
+msgstr ""
+
+#: jira_analytics_gui.py:694
+#, python-format
+msgid "Failed to save setup: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:706
+msgid "Setup saved"
+msgstr ""
+
+#: jira_analytics_gui.py:744
+msgid "Settings saved"
+msgstr ""
+
+#: jira_analytics_gui.py:774
+msgid "Analytics settings saved"
+msgstr ""
+
+#: jira_analytics_gui.py:784 jira_analytics_gui.py:866
+msgid "Initial setup required"
+msgstr ""
+
+#: jira_analytics_gui.py:786
+msgid "Connecting"
+msgstr ""
+
+#: jira_analytics_gui.py:811
+#, python-format
+msgid "Found issues: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:813
+msgid "No issues found"
+msgstr ""
+
+#: jira_analytics_gui.py:815 jira_analytics_gui.py:1016
+#, python-format
+msgid "%s, errors: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:826 jira_analytics_gui.py:839
+#: jira_analytics_gui.py:1045
+#, python-format
+msgid "Authentication failed: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:834 jira_analytics_gui.py:841
+#: jira_analytics_gui.py:1048
+#, python-format
+msgid "Jira API access forbidden: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:843
+#, python-format
+msgid "Connection error: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:863
+msgid "Period analytics disabled in config"
+msgstr ""
+
+#: jira_analytics_gui.py:875
+msgid "Loading period analytics"
+msgstr ""
+
+#: jira_analytics_gui.py:919
+msgid "Updating from Jira..."
+msgstr ""
+
+#: jira_analytics_gui.py:921
+msgid "Loaded from cache — click Refresh to update"
+msgstr ""
+
+#: jira_analytics_gui.py:1014
+#, python-format
+msgid "Period analytics loaded: %s sprints"
+msgstr ""
+
+#: jira_analytics_gui.py:1040
+#, python-format
+msgid "Period analytics error: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:1050
+#, python-format
+msgid "Period analytics failed: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:1105
+#, python-format
+msgid "Failed to save period cache: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:1193
+msgid "List saved"
+msgstr ""
+
+#: jira_analytics_gui.py:1448
+#, python-format
+msgid "Some modules were skipped: %s"
+msgstr ""
+
+#: jira_analytics_gui.py:1499
+msgid "Refresh"
+msgstr ""
+
+#: jira_analytics_gui.py:1501
+msgid "Quit"
+msgstr ""
+
+#: jira_analytics_gui.py:1505
+msgid "Notifications: on"
+msgstr ""
+
+#: jira_analytics_gui.py:1505
+msgid "Notifications: off"
+msgstr ""
+
+#: jira_analytics_gui.py:1543
+msgid "Exiting after check"
+msgstr ""
