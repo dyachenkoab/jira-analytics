@@ -1,0 +1,30 @@
+name: Build Debian Package
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  # release:
+  #   types: [ published ]  # Раскомментируйте для сборки при создании релиза
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Debian package
+        id: build
+        uses: jtdor/build-deb-action@v1
+        with:
+          buildpackage-opts: --build=binary --no-sign  # Сборка бинарного пакета без подписи
+          # docker-image: debian:bookworm-slim        # Можно указать образ, по умолчанию debian:stable-slim[reference:1]
+          # artifacts-dir: dist                        # Папка для артефактов, по умолчанию debian/artifacts[reference:2]
+
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jira-analytics
+          path: debian/artifacts/*.deb  # Или путь, указанный в artifacts-dir
